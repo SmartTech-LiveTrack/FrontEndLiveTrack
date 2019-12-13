@@ -1,0 +1,168 @@
+@import './pages/main';
+
+
+
+
+
+
+@media (min-width: 1200px) {
+    .custom-container {
+        max-width: 1140px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .custom-container {
+        max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .custom-container {
+        max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 576px) {
+    .custom-container {
+        max-width: 540px;
+    }
+    }
+    .custom-container   {
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        
+    }
+
+    // .form-group {
+    //   position: relative;
+    //   margin-bottom: 32px;
+    
+    //   label {
+    //     position: absolute;
+    //     color: rgba(0, 0, 0, 0.6);
+    //     background: color(white);
+    //     pointer-events: none;
+    //     top: 12px;
+    //     left: 16px;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    //     transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    //     white-space: nowrap;
+    //     width: auto;
+    //     z-index: 10;
+    //   }
+    
+    //   .form-control {
+    //     z-index: 1;
+    //     height: 45px;
+    //     line-height: 45px;
+    //     border-radius: 5px;
+    //     border: 1px solid rgba(84, 95, 125, 0.3);
+    //     outline: none;
+    //     color: rgba(0, 0, 0, 1);
+    
+    //     :placeholder-shown + label {
+    //       cursor: text;
+    //       max-width: 66.66%;
+    //       white-space: nowrap;
+    //       overflow: hidden;
+    //       text-overflow: ellipsis;
+    //       transform-origin: left bottom;
+    //       transform: translate(0, 2.125rem) scale(1.5);
+    //     }
+    
+    //     &::-webkit-input-placeholder {
+    //       opacity: 0;
+    //       transition: inherit;
+    //     }
+    //     &:focus::-webkit-input-placeholder {
+    //       opacity: 1;
+    //     }
+    
+    //     &::-webkit-datetime-edit { color: transparent; }
+    //     &:focus::-webkit-datetime-edit { color: #000; }
+    
+    //     @keyframes autofill {
+    //       to {
+    //           color: #666;
+    //           background: transparent  ;
+    //       }
+    //     }
+        
+    //     &:-webkit-autofill {
+    //         animation-name: autofill;
+    //         animation-fill-mode: both;
+    //     }
+        
+    //     &:not(:placeholder-shown) + label,
+    //     &:focus + label {
+    //       transform: translate(0, 0) scale(1);
+    //       cursor: pointer;
+    //     }
+    
+    //     &:focus,
+    //     &:active {
+    //       outline: none;
+    //       box-shadow: none;
+    //       border-color: color(purple);
+    
+    //       ~ label {
+    //         top: 14px;
+    //         padding: 5px;
+    //         transform: scale(0.9) translateY(-34px);
+    //         color: color(purple);
+    //       }
+    //     }
+    
+    //     &.is-filled {
+    //       ~ label {
+    //         top: 14px;
+    //         padding: 5px;
+    //         transform: scale(0.9) translateY(-34px);
+    //       }
+    //     }
+    
+    //     &.ng-invalid.ng-touched {
+    //       color: color(red);
+    //       border-color: color(red);
+    
+    //       &:focus {
+    //         box-shadow: none;
+    //       }
+    
+    //       ~ label {
+    //         color: color(red);
+    //       }
+    //     }
+    //   }
+    // }
+    
+    // .form-check {
+    //   margin-bottom: 24px;
+    //   padding-left: 0;
+    //   .custom-control-label:before {
+    //     border-radius: 0;
+    //   }
+    
+    //   .custom-control-input {
+    //     outline: none;
+    
+    //     &:checked ~ .custom-control-label:before {
+    //       background-color: color(purple);
+    //       border-color: color(purple);
+    //     }
+    
+    //     &:focus ~ .custom-control-label:before {
+    //       box-shadow: none;
+    //     }
+    
+    //     &.ng-invalid.ng-touched ~ .custom-control-label:before {
+    //       border-color: color(red);
+    //     }
+    
+    //   }
+    // }

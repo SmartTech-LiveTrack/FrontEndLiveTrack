@@ -1,0 +1,21 @@
+.login{
+    // height: 100vh;
+    background-color: white;
+    &__right{
+        &--logo{
+            max-width:100%;
+            width: 35%;
+        }
+        & .card{
+            box-shadow: none !important;
+        }
+    }
+    &__left{
+      background-image: url('../../assets/images/login2.jpg');
+        background-size: cover;
+        background-color: #007bff;
+        background-blend-mode: multiply;
+        max-width: 100%;
+        background-repeat: no-repeat;
+    }
+}
