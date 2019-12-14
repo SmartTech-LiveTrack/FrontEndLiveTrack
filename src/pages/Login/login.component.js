@@ -5,6 +5,7 @@ import { PulseLoader } from 'react-spinners';
 
 
 export default function Login() {
+    const [data] = useState({ });
     const [credentials, setCredentials] = useState({ username: null, password: null });
 
     const handleInputChange = (e) => {
@@ -15,8 +16,23 @@ export default function Login() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-       
+        login();
+          
     }
+
+    
+
+      async function login(){
+        const response = await fetch("https://smarttech-live-track.herokuapp.com/api/v1/auth/login", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'       
+        },
+            body:data
+          })
+          console.log(response.headers);
+          console.log(response.json);
+      }
+
     return (
         <Fragment>
             <div className="login ">
@@ -43,11 +59,11 @@ export default function Login() {
                                             </Form.Group>
                                             <Alert />
                                             <Form.Group controlId="formBasicEmail">
-                                                <Form.Control type="email" name='username' placeholder="Email address" onChange={handleInputChange} required />
+                                                <Form.Control type="email" name='username' placeholder="Email address" value={data.username} onChange={handleInputChange} required />
                                             </Form.Group>
 
                                             <Form.Group controlId="formBasicPassword">
-                                                <Form.Control type="password" name='secret' placeholder="Password" onChange={handleInputChange} required />
+                                                <Form.Control type="password" name='secret' placeholder="Password" value={data.password} onChange={handleInputChange} required />
                                             </Form.Group>
                                             <ButtonToolbar className="justify-content-center my-3">
                                                 <Button variant="primary" type="submit"  block>

@@ -1,43 +1,13 @@
-/*import React, { Fragment, useState } from 'react';
-import { Container, Row, Col, Card, Alert, Form, ButtonToolbar, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
-import Geocode from "react-geocode";
-
-const MapWithAMarker = withScriptjs(withGoogleMap(props =>
-  <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: 29.5, lng: -95 }}
-  >
-    <Marker
-      position={{ lat: -34.397, lng: 150.644 }}
-    />
-  </GoogleMap>
-));
-export default function Dashboard() {
-  return (
-    <Fragment>
-      <Container fluid >
-        <MapWithAMarker
-          isMarkerShown
-          loadingElement={<div style={{ height: `100%` }} />}
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-          containerElement={<div style={{ height: `400px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
-      </Container>
-    </Fragment>
-  )
-}*/
-import React, { Component } from "react"
-import { compose } from "recompose"
+import React, { Component } from "react";
+import { compose } from "recompose";
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
   Marker,
   InfoWindow
-} from "react-google-maps"
+} from "react-google-maps";
+import { Container, Row, Col, Card, Alert, Form,ButtonToolbar,Button } from 'react-bootstrap';
 
 const MapWithAMarker = compose(withScriptjs, withGoogleMap)(props => {
 
@@ -65,7 +35,7 @@ const MapWithAMarker = compose(withScriptjs, withGoogleMap)(props => {
   )
 })
 
-export default class ShelterMap extends Component {
+export default class Dashboard extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -86,15 +56,19 @@ export default class ShelterMap extends Component {
   }
   render() {
     return (
-      <MapWithAMarker
+      <Container className="mt-5">
+        <MapWithAMarker
         selectedMarker={this.state.selectedMarker}
         markers={this.state.shelters}
         onClick={this.handleClick}
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+        //http://live-track-api.herokuapp.com/api/users/retrieve_tracks?accountKey=27ec8a
+        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBsIS6_jHWcHnq8L5wlzB-cKwq5VfWoaUk"
         loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `400px` }} />}
+        containerElement={<div style={{ height: `600px` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
+      </Container>
+      
     )
   }
 }

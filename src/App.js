@@ -5,7 +5,6 @@ import './App.css';
 import Login from './pages/Login/login.component';
 import Signup from './pages/Signup/signup.component';
 import Dashboard from './pages/Dashboard/dashboard.component';
-import ShelterMap from './pages/Dashboard/dashboard.component';
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
 
          <Route path="/login" component={Login} />
          <Route path="/register" component={Signup} />
-         <Route path="/dashboard" component={ShelterMap} />
+         <Route path="/dashboard" component={Dashboard} />
     </Switch>
   );
 }
