@@ -13,7 +13,6 @@ export default function Signup(){
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-       
     }
     return(
         <Fragment>
