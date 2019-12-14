@@ -1,12 +1,13 @@
 import React, { Fragment,useState } from 'react';
 import { Container, Row, Col, Card, Alert, Form,ButtonToolbar,Button } from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { PulseLoader } from 'react-spinners';
 
 import { login } from '../../api/auth';
 
 
 export default function Login() {
+    const history = useHistory();
     const [credentials, setCredentials] = useState({ username: '', password: '' });
 
     const handleInputChange = (e) => {
@@ -23,7 +24,7 @@ export default function Login() {
     async function doLogin(){
         let { username, password } = credentials;
         let response = await login(username, password);
-        console.log(response);
+        history.push('/dashboard');
     }
 
     return (
