@@ -3,10 +3,11 @@ import { Container, Row, Col, Card, Alert, Form,ButtonToolbar,Button } from 'rea
 import {Link} from 'react-router-dom';
 import { PulseLoader } from 'react-spinners';
 
+import { login } from '../../api/auth';
+
 
 export default function Login() {
-    const [data] = useState({ });
-    const [credentials, setCredentials] = useState({ username: null, password: null });
+    const [credentials, setCredentials] = useState({ username: '', password: '' });
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -16,22 +17,14 @@ export default function Login() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        login();
-          
+        doLogin();  
     }
 
-    
-
-      async function login(){
-        const response = await fetch("https://smarttech-live-track.herokuapp.com/api/v1/auth/login", {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'       
-        },
-            body:data
-          })
-          console.log(response.headers);
-          console.log(response.json);
-      }
+    async function doLogin(){
+        let { username, password } = credentials;
+        let response = await login(username, password);
+        console.log(response);
+    }
 
     return (
         <Fragment>
@@ -59,11 +52,20 @@ export default function Login() {
                                             </Form.Group>
                                             <Alert />
                                             <Form.Group controlId="formBasicEmail">
-                                                <Form.Control type="email" name='username' placeholder="Email address" value={data.username} onChange={handleInputChange} required />
+                                                <Form.Control 
+                                                    type="email" name='username' 
+                                                    placeholder="Email address" 
+                                                    value={credentials.username} 
+                                                    onChange={handleInputChange} required />
                                             </Form.Group>
 
                                             <Form.Group controlId="formBasicPassword">
-                                                <Form.Control type="password" name='secret' placeholder="Password" value={data.password} onChange={handleInputChange} required />
+                                                <Form.Control 
+                                                    type="password" 
+                                                    name='password' 
+                                                    placeholder="Password" 
+                                                    value={credentials.password} 
+                                                    onChange={handleInputChange} required />
                                             </Form.Group>
                                             <ButtonToolbar className="justify-content-center my-3">
                                                 <Button variant="primary" type="submit"  block>
